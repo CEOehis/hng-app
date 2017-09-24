@@ -25,7 +25,9 @@ function startTime() {
     var t = setInterval(startTime, 500);
 }
 
-function greet(time) {
+function greet() {
+    var display = document.getElementById('txt');
+    var time = display.textContent.slice(0,1);
     var greeting;
     switch(time) {
         case 0:
@@ -60,10 +62,13 @@ function greet(time) {
         case 23:
           greeting = 'Good Evening';
           break;
+        default:
+          greeting = 'Hi';
     }
 }
 
 startTime()
+greet()
 </script>
 </body>
 </html>
