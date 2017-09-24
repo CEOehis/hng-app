@@ -44,10 +44,13 @@
 <script>
 function startTime() {
     var today = new Date();
-    var h = ('0' + today.getHours()).slice(-2);
+    var h = today.getHours();
+    var timeOfDay = h >= 12 ? 'PM' : 'AM'; 
+    h = h % 12;
+    h = h ? h : 12;
     var m = ('0' + today.getMinutes()).slice(-2);
     var s = ('0' + today.getSeconds()).slice(-2);
-    document.getElementById('txt').innerHTML = `${h} : ${m} : ${s}`;
+    document.getElementById('txt').innerHTML = `${h}:${m}:${s} ${timeOfDay}`;
     var t = setInterval(startTime, 500);
 }
 
