@@ -55,40 +55,40 @@ function startTime() {
 }
 
 function greet() {
-    var display = document.getElementById('txt');
-    var time = display.textContent.slice(0,2);
+    var today = new Date();
+    var time = today.getHours();
     var greeting;
     switch(time) {
-        case '00':
-        case '01':
-        case '02':
-        case '03':
-        case '04':
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
           greeting = 'It\'s midnight, you should be asleep';
           break;
-        case '05':
-        case '06':
-        case '07':
-        case '08':
-        case '09':
-        case '10':
-        case '11':
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        case 11:
           greeting = 'Good Morning';
           break;
-        case '12':
-        case '13':
-        case '14':
-        case '15':
-        case '16':
-        case '17':
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
           greeting = 'Good Afternoon';
           break;
-        case '18':
-        case '19':
-        case '20':
-        case '21':
-        case '22':
-        case '23':
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+        case 22:
+        case 23:
           greeting = 'Good Evening';
           break;
         default:
