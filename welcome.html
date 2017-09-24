@@ -70,7 +70,7 @@
 <body>
 
   <main>
-      <h1><span id="greeting"></span> <span id="stranger"></span><span id='side'></span></h1>
+      <h1><span id="greeting"></span> <span id="stranger">Stranger</span><span id='side'></span></h1>
       <p id="question">How about you <button>tell</button> me your name?</p>
       <h3>The time is <span id="txt"></span></h3> 
       
@@ -82,6 +82,7 @@
 
 
 <script>
+  var user; 
 function startTime() {
     var today = new Date();
     var h = today.getHours();
@@ -181,25 +182,18 @@ function sideNote() {
 }
   
   function getUser() {
-    var user = prompt("Hi, I'd like to know your name");
+    user = prompt("Hi, I'd like to know your name");
     var stranger = document.getElementById('stranger');
     var question = document.getElementById('question');
     if(user) {
-      stranger.innerHTML = user; 
-      //question.style.display = "none";
-      startTime()
-      greet()
-      sideNote()
-    }
-    else {
-      stranger.inner.HTML = "Stranger";
-      //question.style.display = 'block'; 
-      startTime()
-      greet()
-      sideNote()
+      stranger.innerText = user; 
+      question.style.display = "none";
     }
   }
 getUser()
+startTime()
+greet()
+sideNote()
 
 
 </script>
